@@ -16,6 +16,7 @@ exports.signup = async (req, res) => {
     const token = signToken(newAccount._id);
     res.status(201).json({
       status: "Le compte a été créé avec succès!",
+      accountId: newAccount._id,
       token,
       data: {
         newAccount,
@@ -68,7 +69,6 @@ exports.login = async (req, res, next) => {
     // 3) if every thing is ok, then send the token to the client and
 
     const token = signToken(account._id);
-
     res.status(200).json({
       status: "connected to the platform",
       accountId: account._id,
