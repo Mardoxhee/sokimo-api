@@ -70,7 +70,7 @@ const agentSchema = new mongoose.Schema({
     matricule: {
         type: String,
         required: [true, "Renseignez le numéro matricule"],
-        unique: true, // Assurez-vous que le numéro est unique
+        unique: [true, "deux agents ne peuvent pas avoir le même matricule"],
       },
     // direction: {
     //     type: String,
