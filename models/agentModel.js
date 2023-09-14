@@ -68,7 +68,7 @@ const agentSchema = new mongoose.Schema({
     //     validate: [validator.isEmail, "Vérifiez que vous avez bien saisi l'adresse mail svp !'"]
     //   },
     matricule: {
-        type: String,
+        type: Number,
         required: [true, "Renseignez le numéro matricule"],
         unique: [true, "deux agents ne peuvent pas avoir le même matricule"],
       },
