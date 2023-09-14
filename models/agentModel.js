@@ -43,10 +43,22 @@ const agentSchema = new mongoose.Schema({
     //     type: String,
     //     required: [true, "renseignez votre état civile"],
     //   },
-    adressehome: {
+    adressNumero: {
         type: String,
-        required: [true, "Renseignez l adresse"],
+        required: [true, "Resignez un numéro de domicile"],
       },
+    adressCommune: {
+      type: String,
+      required: [true, "Renseignez la commune"],
+    },
+    adressQuartier: {
+      type: String,
+      // required: [true, "Renseignez le quartier"],
+    },
+    adressAvenue: {
+      type: String,
+      required: [true, "Renseignez lavenue"],
+    },
     // tel: {
     //     type: Number,
     //     required: [true, "Renseignez le numéro de téléphone"],
