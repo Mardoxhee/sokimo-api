@@ -59,6 +59,10 @@ const agentSchema = new mongoose.Schema({
       type: String,
       required: [true, "Renseignez lavenue"],
     },
+    adressehome: {
+      type: String,
+      // required: [true, "Renseignez lavenue"],
+    },
     // tel: {
     //     type: Number,
     //     required: [true, "Renseignez le numéro de téléphone"],
