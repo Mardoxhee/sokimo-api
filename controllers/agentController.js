@@ -61,7 +61,7 @@ exports.getOneAgent= async (req, res) => {
                     new: true,
                 });
                 res.status(200).json({
-                    statusstatus: "success",
+                    status: "Agent modifé avec succès !",
                     agent,
                 });
                 } catch (err) {
