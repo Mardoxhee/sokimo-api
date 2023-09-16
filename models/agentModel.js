@@ -111,6 +111,9 @@ const agentSchema = new mongoose.Schema({
     //     type: Date,
     //     required: [true, "Renseignez la date d affectation"],
     //   },
+    entite: {
+      type: String,
+  },
     photo: {
         type: String,
         required: [true, "Renseignez la photo de l agent"],
