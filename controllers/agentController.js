@@ -1,4 +1,5 @@
 const Agent = require("../models/agentModel");
+const APIfeatures = require("./../utils/apiFeatures");
 
 //Ici on a le controlleur de création d'un agent
 exports.createAgent = async (req, res) => {
@@ -25,7 +26,11 @@ exports.createAgent = async (req, res) => {
   //Le controlleur d'affichage de tous les agents
   exports.getAgents = async (req, res) => {
     try {
-      const agents = await Agent.find();
+      const features = new APIfeatures(Agent.find(), req.query)
+      .filter()
+      .sort()
+      .limitFields()
+      const agents = await features.query;
       res.status(200).json({
         status: "Success",
         numberOfAgents: agents.length,
