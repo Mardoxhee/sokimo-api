@@ -75,7 +75,7 @@ const agentSchema = new mongoose.Schema({
       },
     matricule: {
         type: Number,
-        required: [true, "Renseignez le numéro matricule"],
+        // required: [true, "Renseignez le numéro matricule"],
         unique: [true, "deux agents ne peuvent pas avoir le même matricule"],
       },
     direction: {
@@ -95,23 +95,23 @@ const agentSchema = new mongoose.Schema({
   },
     inss: {
         type: String,
-        required: [true, "Renseignez le numéro inss"],
+        // required: [true, "Renseignez le numéro inss"],
       },
 
     diplome: {
         type: String,
-        required: [true, "Renseignez le numéro inss"],
+        // required: [true, "Renseignez le numéro inss"],
       },
     salaire: {
         type: Number,
-        required: [true, "Renseignez votre salaire"],
+        // required: [true, "Renseignez votre salaire"],
       },
     nombreenfants: {
         type: Number,
       },
     datengagement: {
         type: Date,
-        required: [true, "Renseignez la date d affectation"],
+        // required: [true, "Renseignez la date d affectation"],
       },
     entite: {
       type: String,
