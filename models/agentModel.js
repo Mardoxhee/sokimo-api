@@ -117,7 +117,7 @@ const agentSchema = new mongoose.Schema({
       type: String,
   },
   actif: {
-    type: Boolean,
+    type: String,
 },
     photo: {
         type: String,
