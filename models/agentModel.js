@@ -71,7 +71,7 @@ const agentSchema = new mongoose.Schema({
       },
     email: {
         type: String,
-        validate: [validator.isEmail, "Vérifiez que vous avez bien saisi l'adresse mail svp !'"]
+        // validate: [validator.isEmail, "Vérifiez que vous avez bien saisi l'adresse mail svp !'"]
       },
     matricule: {
         type: Number,
