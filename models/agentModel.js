@@ -41,7 +41,7 @@ const agentSchema = new mongoose.Schema({
       },
     etatcivile: {
         type: String,
-        required: [true, "renseignez votre état civile"],
+        // required: [true, "renseignez votre état civile"],
       },
     adressNumero: {
         type: String,
