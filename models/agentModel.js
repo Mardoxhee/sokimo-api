@@ -31,12 +31,9 @@ const agentSchema = new mongoose.Schema({
       },
     genre: {
         type: String,
-        required: [true, "Renseignez le genre"],
+        // required: [true, "Renseignez le genre"],
       },  
     provinceaffectation: {
-        type: String,
-      },
-    territoireaffectation: {
         type: String,
       },
     etatcivile: {
@@ -113,11 +110,14 @@ const agentSchema = new mongoose.Schema({
         type: Date,
         // required: [true, "Renseignez la date d affectation"],
       },
-    entite: {
+    entiteaffectation: {
       type: String,
   },
   actif: {
     type: String,
+},
+departement: {
+  type: String,
 },
     photo: {
         type: String,
