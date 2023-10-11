@@ -12,6 +12,10 @@ const accountSchema = new mongoose.Schema({
     type: String,
     required: [true, "an account must have a firstName"],
   },
+  entite: {
+    type: String,
+    required: [true, "Le compte doit être limité dans l'espace"],
+  },
   phone: {
     type: String,
     unique: true,
