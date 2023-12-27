@@ -10,15 +10,15 @@ const agentSchema = new mongoose.Schema({
     },
     nom: {
       type: String,
-      required: [true, "Renseignez le nom"],
+      // required: [true, "Renseignez le nom"],
     },
     postnom: {
         type: String,
-        required: [true, "Renseignez le postnom"],
+        // required: [true, "Renseignez le postnom"],
       },
     prenom: {
         type: String,
-        required: [true, "Renseignez le prenom"],
+        // required: [true, "Renseignez le prenom"],
       },
     lieuNaissance: {
         type: String,
@@ -42,11 +42,11 @@ const agentSchema = new mongoose.Schema({
       },
     adressNumero: {
         type: String,
-        required: [true, "Resignez un numéro de domicile"],
+        // required: [true, "Resignez un numéro de domicile"],
       },
     adressCommune: {
       type: String,
-      required: [true, "Renseignez la commune"],
+      // required: [true, "Renseignez la commune"],
     },
     adressQuartier: {
       type: String,
@@ -54,7 +54,7 @@ const agentSchema = new mongoose.Schema({
     },
     adressAvenue: {
       type: String,
-      required: [true, "Renseignez lavenue"],
+      // required: [true, "Renseignez lavenue"],
     },
     
     adressehome : {
@@ -73,7 +73,7 @@ const agentSchema = new mongoose.Schema({
     matricule: {
         type: Number,
         // required: [true, "Renseignez le numéro matricule"],
-        unique: [true, "deux agents ne peuvent pas avoir le même matricule"],
+        // unique: [true, "deux agents ne peuvent pas avoir le même matricule"],
       },
     direction: {
         type: String,
