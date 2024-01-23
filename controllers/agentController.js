@@ -5,13 +5,13 @@ const APIfeatures = require("./../utils/apiFeatures");
 exports.createAgent = async (req, res) => {
   try {
     // Vérifiez d'abord si un agent avec le même matricule existe déjà
-    const existingAgent = await Agent.findOne({ matricule: req.body.matricule });
-    if (existingAgent) {
-      return res.status(400).json({
-        status: "failed",
-        message: "Le matricule existe déjà. Veuillez en choisir un autre.",
-      });
-    }
+    // const existingAgent = await Agent.findOne({ matricule: req.body.matricule });
+    // if (existingAgent) {
+    //   return res.status(400).json({
+    //     status: "failed",
+    //     message: "Le matricule existe déjà. Veuillez en choisir un autre.",
+    //   });
+    // }
 
     // Trouvez le dernier agent pour obtenir le numéro suivant
     const dernierAgent = await Agent.findOne({}, {}, { sort: { numero: -1 } });
