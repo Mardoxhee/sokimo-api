@@ -14,11 +14,11 @@ exports.createAgent = async (req, res) => {
     // }
 
     // Trouvez le dernier agent pour obtenir le numéro suivant
-    const dernierAgent = await Agent.findOne({}, {}, { sort: { numero: -1 } });
-    const numeroSuivant = dernierAgent ? dernierAgent.numero + 1 : 1;
+    // const dernierAgent = await Agent.findOne({}, {}, { sort: { numero: -1 } });
+    // const numeroSuivant = dernierAgent ? dernierAgent.numero + 1 : 1;
 
     // Créez le nouvel agent avec le numéro attribué
-    const newAgent = await Agent.create({ ...req.body, numero: numeroSuivant });
+    const newAgent = await Agent.create(req.body);
 
     res.status(201).json({
       status: "Agent enregistré avec succès !",
@@ -36,8 +36,7 @@ exports.createAgent = async (req, res) => {
   //Le controlleur d'affichage de tous les agents
   exports.getAgents = async (req, res) => {
     try {
-      const features = new APIfeatures(Agent.find(), req.query)
-      const agents = await features.query;
+      const agents = await  Agent.find()
       res.status(200).json({
         status: "Success",
         numberOfAgents: agents.length,
