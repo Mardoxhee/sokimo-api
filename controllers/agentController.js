@@ -37,7 +37,6 @@ exports.createAgent = async (req, res) => {
   exports.getAgents = async (req, res) => {
     try {
       const features = new APIfeatures(Agent.find(), req.query)
-      .filter().limitFields()
       const agents = await features.query;
       res.status(200).json({
         status: "Success",
