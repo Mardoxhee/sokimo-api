@@ -36,7 +36,9 @@ exports.createAgent = async (req, res) => {
   //Le controlleur d'affichage de tous les agents
   exports.getAgents = async (req, res) => {
     try {
-      const agents = await  Agent.find()
+      const features = new APIfeatures(Agent.find(), req.query)
+      .paginate();
+      const agents = await features.query
       res.status(200).json({
         status: "Success",
         numberOfAgents: agents.length,
