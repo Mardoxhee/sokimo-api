@@ -37,6 +37,7 @@ exports.createAgent = async (req, res) => {
   exports.getAgents = async (req, res) => {
     try {
       const features = new APIfeatures(Agent.find(), req.query)
+      .filter()
       .paginate();
       const agents = await features.query
       res.status(200).json({
