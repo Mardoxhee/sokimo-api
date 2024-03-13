@@ -6,7 +6,7 @@ const agentSchema = new mongoose.Schema({
       type: Number,
       unique: true, // Assurez-vous que le numéro est unique
       min: 1,
-      max: 9999, // Limitez la plage de numéros de 1 à 9999
+      max: 9999, 
     },
     nom: {
       type: String,
