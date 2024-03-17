@@ -34,10 +34,14 @@ exports.createAgent = async (req, res) => {
   exports.getAgents = async (req, res) => {
     try {
       const totalAgentsCount = await Agent.countDocuments();
-      const features = new APIfeatures(Agent.find(), req.query)
-      .filter()
-      .paginate();
-      const agents = await features.query
+
+      const fieldsToInclude = 'nom postnom prenom  genre matricule grade fonction diplome actif entiteaffectation provinceaffectation';
+
+      const query = Agent.find().select(fieldsToInclude);
+      const features = new APIfeatures(query, req.query).filter()
+
+      
+      const agents = await features.query;
       res.status(200).json({
         status: "Success",
         numberOfAgents: totalAgentsCount,
