@@ -33,13 +33,14 @@ exports.createAgent = async (req, res) => {
   //Le controlleur d'affichage de tous les agents
   exports.getAgents = async (req, res) => {
     try {
+      const totalAgentsCount = await Agent.countDocuments();
       const features = new APIfeatures(Agent.find(), req.query)
       .filter()
       .paginate();
       const agents = await features.query
       res.status(200).json({
         status: "Success",
-        numberOfAgents: agents.length,
+        numberOfAgents: totalAgentsCount,
         agents: agents
       });
     } catch (err) {
